@@ -1,0 +1,172 @@
+
+/*
+************
+*************************
+10. Popup
+******************************************************* 
+*************************************************************** */
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// search-box-popup
+.sg-popup-search-box {
+    .title {
+        color: var(--clr-common-white);
+        font-weight: 600;
+        margin-bottom: 25px;
+        @media #{$xs} {
+            font-size: 30px;
+        }
+        @media #{$sm} {
+            font-size: 36px;
+        }
+    }
+    &-form {
+        display: flex;
+        @media #{$xs} {
+            flex-wrap: wrap;
+        }
+        @media #{$sm} {
+            flex-wrap: nowrap;
+        }
+        .sg-popup-search-box-close-action-btn {
+            height: 60px;
+            width: 60px;
+            font-size: 30px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            margin-left: 25px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--clr-common-white);
+            flex: 0 0 auto;
+            @media #{$xs} {
+                margin: auto;
+            }
+            @media #{$sm} {
+                margin-left: 25px;
+                margin-right: 0;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+                border-color: transparent;
+            }
+        }
+    }
+    position: fixed;
+    display: flex;
+    left: 0;
+    top: -100px;
+    width: 100%;
+    z-index: 9999;
+    height: 100vh;
+    align-items: center;
+    transform: scaleY(0);
+    transition: all .3s;
+    transform-origin: top;
+    opacity: 0;
+    visibility: hidden;
+    @media #{$xs} {
+        height: 100%;
+        overflow-y: auto;
+    }
+    &.active {
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(1);
+    }
+    & form {
+        position: relative;
+        width: 100%;
+        @media #{$xs} {
+            margin-bottom: 50px;
+        }
+        @media #{$sm} {
+            margin-bottom: 0px;
+        }
+    }
+    &-input {
+        & input {
+            width: 100%;
+            height: 60px;
+            background: transparent;
+            border: 1px solid rgb(255, 255, 255 , 20%);
+            border-radius: 5px;
+            font-size: 14px;
+            color: var(--clr-common-white);
+            padding: 0 30px;
+            padding-right: 115px;
+            &::placeholder {
+                color: var(--clr-common-white);
+                font-size: 14px;
+            }
+            @media #{$xs} {
+                width: 100%;
+                background-color: transparent;
+                opacity: .7;
+            }
+        }
+    }
+    & button[type="submit"] {
+        position: absolute;
+        right: 0;
+        top: 0px;
+        bottom: 0;
+        padding: 0 30px;
+        background: transparent;
+        color: white;
+        font-size: 24px;
+        border-radius: 0;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-left: 1px solid rgba(255, 255, 255, 20%);
+        border-right: none;
+        border-top: none;
+        border-bottom: none;
+        &:hover {
+            color: var(--clr-common-white);
+            background-color: rgba(255, 255, 255, 20%);
+        }
+    }
+    & .nice-select {
+        width: 350px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 16px;
+        color: var(--clr-common-black);
+        border: 1px solid var(--clr-bg-gray-14);
+        background: var(--clr-bg-gray-16);
+        position: relative;
+        z-index: 9;
+        padding-left: 25px;
+        padding-right: 25px;
+        &::after {
+            border-bottom-width: 1px;
+            border-right-width: 1px;
+            border-bottom-color: var(--clr-body-text);;
+            border-right-color: var(--clr-body-text);;
+            right: 25px;
+            width: 7px;
+            height: 7px;
+        }
+        @media #{$xs} {
+            float: none;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        & .list {
+            width: 100%;
+        }
+    }
+}
+.padding-box input.contact-form-2-checkbox {
+    transform: translateY(1px);
+    margin-right: 6px;
+}
+.contact-form-2-policy > a {
+    margin-left: 5px;
+}

@@ -1,0 +1,125 @@
+
+/*
+************
+*************************
+04. Common Title
+******************************************************* 
+*************************************************************** */
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+
+// section-title-1
+.subnet-section-title-1 {
+    br {
+        @media #{$xs} {
+            display: none;
+        }
+    }
+    @media #{$xl} {
+        font-size: 45px;
+    }
+    @media #{$lg} {
+        font-size: 40px;
+    }
+    @media #{$md} {
+        font-size: 36px;
+    }
+    @media #{$xs} {
+        font-size: 30px;
+    }
+    @media #{$sm} {
+        font-size: 34px;
+    }
+}
+
+// section-title-2
+.subnet-title-2 {
+    font-size: 48px;
+    font-weight: 800;
+    text-transform: capitalize;
+    margin-bottom: 16px;
+    span {
+        display: inline-block;
+        color: var(--clr-theme-secondary);
+    }
+    br {
+        @media #{$xs} {
+            display: none;
+        }
+    }
+    @media #{$xl} {
+        font-size: 45px;
+    }
+    @media #{$lg} {
+        font-size: 40px;
+    }
+    @media #{$md} {
+        font-size: 36px;
+    }
+    @media #{$xs} {
+        font-size: 30px;
+    }
+    @media #{$sm} {
+        font-size: 34px;
+    }
+}
+
+// subtitle 1
+.subnet-subtitle {
+    .content {
+        * {
+            display: inline-block;
+            rotate: -4deg;
+            text-decoration: none;
+        }
+        &:nth-child(2) {
+            margin-top: -10px;
+            margin-left: 20px;
+        }
+    }
+}
+
+.white-style {
+    * {
+        background-color: var(--clr-common-white);
+        color: var(--clr-bg-blue);
+        padding: 8px 13px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+}
+.green-style {
+    * {
+        background-color: var(--clr-theme-secondary);
+        color: var(--clr-common-white);
+        padding: 8px 13px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+}
+
+// subtitle-2
+.subnet-subtitle-2 {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    color: var(--clr-body-heading);
+    margin-bottom: 10px;
+    span {
+        display: inline-block;
+        margin-right: 8px;
+    }
+}
+.subnet-section-title-1 {
+    font-weight: 800;
+    font-size: 48px;
+    @media #{$xs} {
+        font-size: 32px;
+    }
+}

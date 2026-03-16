@@ -1,0 +1,191 @@
+
+/*
+************
+*************************
+09. Comments
+******************************************************* 
+*************************************************************** */
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// comments
+.subnet-comments {
+    &-title {
+        font-weight: 700;
+        font-size: 24px;
+    }
+    &-box {
+        &-wrap {
+            .children {
+                @media #{$xs} {
+                    margin-left: 20px;
+                }
+                @media #{$sm} {
+                    margin-left: 50px;
+                }
+                .subnet-comments-box-author-img {
+                    width: 50px;
+                    height: 50px;
+                }
+                .subnet-comments-box-author-content {
+                    padding-top: 7px;
+                }
+            }
+        }
+        &-single {
+            display: flex;
+            padding-bottom: 40px;
+            padding-top: 23px;
+            grid-gap: 20px;
+            border-bottom: 1px solid rgba(8, 8, 33, 0.1);
+        }
+        &-author {
+            &-img {
+                width: 60px;
+                height: 60px;
+                flex: 0 0 auto;
+                border-radius: 50%;
+                overflow: hidden;
+                a {
+                    width: 100%;
+                    height: 100%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+            &-content {
+                padding-top: 13px;
+                padding-right: 20px;
+                @media #{$xs} {
+                    padding-right: 0;
+                }
+                & .title {
+                    font-size: 15px;
+                    font-weight: 600;
+                    margin-bottom: 4px;
+                    a {
+                        text-decoration: none;
+                        &:hover {
+                            color: var(--clr-theme-primary);
+                        }
+                    }
+                }
+                 p {
+                    font-size: 15px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    color: var(--clr-body-text);
+                    opacity: .6;
+                    margin-bottom: 24px;
+                }
+                & .date {
+                    font-size: 13px;
+                    display: block;
+                    line-height: 22px;
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    color: var(--clr-body-text);
+                    opacity: .7;
+                    margin-bottom: 11px;
+                }
+                .replay-btn {
+                    display: inline-block;
+                    background-color: transparent;
+                    border: 1px solid rgba(8, 8, 33, 0.1);
+                    border-radius: 20px;
+                    font-size: 12px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    line-height: 28px;
+                    height: 28px;
+                    color: var(--clr-body-text);
+                    text-decoration: none;
+                    padding: 0 17px;
+                    &:hover {
+                        color: var(--clr-common-white);
+                        background-color: var(--clr-theme-primary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// comments-reply
+.subnet-comment-replay-form {
+    &-title {
+        font-size: 24px;
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #676776;
+    }
+    .input-title {
+        font-size: 16px;
+        display: block;
+        font-weight: 500;
+        color: var(--clr-body-text);
+        line-height: 1;
+        margin-bottom: 15px;
+    }
+    & input, & textarea {
+        font-size: 14px;
+        width: 100%;
+        height: 46px;
+        border: 1px solid rgba(8, 8, 33, 0.1);
+        border-radius: 6px;
+        padding: 0 20px;
+        font-size: 14px;
+        color: var(--clr-body-text);
+    }
+    & textarea {
+        height: 160px;
+        padding: 20px;
+    }
+    .check-box {
+        display: flex;
+        span {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 400;
+            color: #676776;
+            text-transform: capitalize;
+        }
+    }
+    .contact-form-2-checkbox {
+        flex: 0 0 auto;
+        border: none;
+        outline: none;
+        width: 14px;
+        display: inline-block;
+        height: 14px;
+        margin-right: 7px;
+    }
+    & .submit-comments {
+        border: none;
+        outline: none;
+        width: 212px;
+        i {
+            color: var(--clr-common-white);
+        }
+    }
+}
+.nice-select.select-country {
+    &::after {
+        border-right: 1px solid #111;
+        border-bottom: 1px solid #111;
+        width: 7px;
+        height: 7px;
+        right: 20px;
+    }
+    ul {
+        width: 100%;
+    }
+}

@@ -1,0 +1,34 @@
+// Font Family 
+$roboto: 'Roboto', sans-serif;
+
+
+
+
+:root {
+  --clr-bg-blue: #080821;
+  --clr-common-white: #ffffff;
+  --clr-bg-light-blue: #234AD6;
+
+  --clr-theme-primary: #DE2C2C;
+  --clr-theme-secondary: #16B126;
+  --clr-body-text: #080821;
+  --clr-body-heading: #080821;
+  --clr-bg-gray-1: #F8F8F8;
+  --clr-bg-gray-12: #F5F5F5;
+
+
+}
+
+
+
+
+
+// Responsive Variables
+$over:'(min-width: 1800px)';
+$xxxl: 'only screen and (min-width: 1600px) and (max-width: 1799px)';
+$xxl: 'only screen and (min-width: 1400px) and (max-width: 1599px)';
+$xl: 'only screen and (min-width: 1200px) and (max-width: 1399px)';
+$lg: 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$md:'only screen and (min-width: 768px) and (max-width: 991px)';
+$sm: 'only screen and (min-width: 576px) and (max-width: 767px)';
+$xs:'(max-width: 767px)';

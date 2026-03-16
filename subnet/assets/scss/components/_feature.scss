@@ -1,0 +1,82 @@
+
+/*
+************
+*************************
+12. Feature
+******************************************************* 
+*************************************************************** */
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.subnet-feature-1 {
+    &-item {
+        &-price{
+            position: absolute;
+            left: 20px;
+            top: -15px;
+            span {
+                font-size: 16px;
+                padding: 5px 17px;
+            }
+        }
+        position: relative;
+        background-color: var(--clr-common-white);
+        box-shadow: 0px 10px 20px rgba(8, 8, 33, 0.1), 10px 10px 0px var(--clr-common-white);
+        border-radius: 6px;
+        border: 1px solid transparent;
+        @include transition(.3s);
+        &-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 40px 40px;
+            @media #{$lg} {
+                padding: 40px 30px;
+            }
+            @media #{$xs} {
+                padding: 35px 25px;
+            }
+            @media #{$sm} {
+                padding: 40px 30px;
+            }
+            &-icon {
+                flex: 0 0 auto;
+                border: 1px solid rgba(8, 8, 33, 0.1);
+                width: 80px;
+                height: 80px;
+                text-align: center;
+                line-height: 75px;
+                border-radius: 50%;
+                @include transition(.3s);
+            }
+            &-text {
+                .title {
+                    font-weight: 600;
+                    line-height: 1.5;
+                    margin-bottom: 4px;
+                    a {
+                        text-decoration: none;
+                        &:hover {
+                            color: var(--clr-theme-primary);
+                        }
+                    }
+                }
+                .subtitle {
+                    margin: 0;
+                    opacity: .6;
+                }
+            }
+            
+        }
+        &:hover {
+            border-color: var(--clr-theme-primary);
+        }
+        
+    }
+}
+.hr-subnet-feature-bg-pos {
+    background-position: 50% 54%;
+}
+.content.green-style a:hover {
+    color: var(--clr-common-white);
+}

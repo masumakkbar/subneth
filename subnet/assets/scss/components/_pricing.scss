@@ -1,0 +1,500 @@
+
+/*
+************
+*************************
+17. Pricing
+******************************************************* 
+*************************************************************** */
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+
+// ------------ home-page-1 ----------------
+.subnet-pricing-1 {
+    &-area {
+        position: relative;
+        .pricing-1-bg-shape-1 {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 100%;
+            transform: translateX(-50%);
+        }
+    }
+    &-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0 70px;
+        @media #{$xl} {
+            padding: 0 30px;
+        }
+        @media #{$md} {
+            padding: 0 0px;
+        }
+        @media #{$xs} {
+            justify-content: center;
+            padding: 0 0px;
+        }
+        @media #{$sm} {
+            padding: 0 70px;
+        }
+    }
+    &-box {
+        background: var(--clr-common-white);
+        box-shadow: 0px 30px 60px rgba(8, 8, 33, 0.1);
+        border-radius: 10px;
+        width: 370px;
+        padding: 50px 40px;
+        @media #{$xxl} {
+            width: 330px;
+        }
+        @include transition(.3s);
+        @media #{$xl} {
+            width: 355px;
+        }
+        @media #{$xl} {
+            width: 340px;
+        }
+        @media #{$md} {
+            width: 355px;
+        }
+        @media #{$xs} {
+            width: 289px;
+            padding: 50px 30px;
+        }
+        @media #{$sm} {
+            width: 339px;
+            padding: 50px 40px;
+        }
+        &-icon {
+            margin-top: -87px;
+            .icon {
+                display: inline-block;
+                width: 74px;
+                height: 74px;
+                background-color: var(--clr-theme-primary);
+                border-radius: 50%;
+                line-height: 74px;
+                text-align: center;
+                @include transition(.3s);
+                &:not(:last-child) {
+                    margin-right: 8px;
+                }
+            }
+        }
+        &-title {
+            span {
+                display: inline-block;
+                font-weight: 500;
+                text-transform: uppercase;
+                font-size: 14px;
+                color: var(--clr-theme-secondary);
+                line-height: 13px;
+                margin-bottom: 13px;
+            }
+            h6 {
+                font-size: 20px;
+                font-weight: 700;
+                margin-bottom: 0;
+            }
+        }
+        &-price {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-gap: 8px;
+            h2 {
+                font-size: 64px;
+                font-weight: 700;
+                margin: 0;
+            }
+            .date-wrap {
+                .date {
+                    display: block;
+                    font-size: 30px;
+                    line-height: 20px;
+                    font-weight: 400;
+                    margin-bottom: 5px;
+                }
+                .mounth {
+                    font-size: 16px;
+                    display: block;
+                    line-height: 18px;
+                    font-weight: 400;
+                    color: #525264;
+                }
+            }
+        }
+        &-feature {
+            text-align: left;
+            ul {
+                list-style: none;
+                li {
+                    font-size: 16px;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    line-height: 22px;
+                    position: relative;
+                    opacity: .7;
+                    padding-left: 20px;
+                    &:not(:last-child) {
+                        margin-bottom: 15px;
+                    }
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background-color: var(--clr-theme-secondary);
+                        top: 6px;
+                        left: 4px;
+                    }
+                }
+            }
+        }
+        &-btn {
+            .subnet-btn-2 {
+                height: 50px;
+                line-height: 50px;
+                width: 100%;
+            }
+        }
+        &:hover {
+            box-shadow: none;
+        }
+    }
+}
+
+// ------------ home-page-2 ----------------
+
+.subnet-pricing-2 {
+    &-area {
+       position: relative;
+       .pricing-2-bg-shape-1 {
+            position: absolute;
+            bottom: 105px;
+            left: 0;
+            width: 100%;
+            right: 0;
+                img {
+                    width: 100%;
+                }
+            @media #{$lg,$md,$xs} {
+                bottom: 50%;   
+            }
+       }
+    }
+    &-title-wrap {
+        .subnet-title-2 {
+            margin-bottom: 0;
+        }
+    }
+    &-box {
+        position: relative;
+        background: var(--clr-common-white);
+        border: 1.5px solid rgba(8, 8, 33, 0.1);
+        border-radius: 10px;
+        padding: 35px 40px;
+        overflow: hidden;
+        @include transition(.3s);
+        margin-bottom: 30px;
+        @media #{$xs} {
+            padding: 35px 25px;
+        }
+        @media #{$sm} {
+            padding: 35px 40px;
+        }
+
+        &:is(.active) {
+            border-color: var(--clr-theme-primary);
+            box-shadow: 0px 20px 120px rgba(8, 8, 33, 0.3);
+            &::after {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+            .box-bg-shape {
+                left: -3px;
+                top: -3px;
+                opacity: 1;
+                visibility: visible;
+            }
+            .subnet-pricing-2-box-icon-wrap {
+                .icon {
+                    &:nth-child(2) {
+                        background-color: var(--clr-body-heading);
+                    }
+                } 
+            }
+            .subnet-pricing-2-box-title-wrap {
+                span {
+                    color: var(--clr-common-white);
+                }
+            }
+            .subnet-pricing-2-box-price {
+                color: var(--clr-common-white);
+                span {
+                    color: var(--clr-common-white);
+                }
+            }
+            .subnet-pricing-2-box-feature {
+                ul {
+                    li {
+                        color: var(--clr-common-white);
+                        opacity: 1;
+                        i {
+                            color: var(--clr-common-white);
+                        }
+                        &.disable {
+                            opacity: .3;
+                        }
+                    }
+                }
+            }
+            .subnet-pricing-2-box-btn {
+                .subnet-btn-2 {
+                    background-color: var(--clr-common-white);
+                    border-color: var(--clr-common-white);
+                    color: var(--clr-theme-primary);
+                    &:hover {
+                        border-color: var(--clr-theme-secondary);
+                        color: var(--clr-common-white);
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            border-color: var(--clr-theme-primary);
+            box-shadow: 0px 20px 120px rgba(8, 8, 33, 0.3);
+            &::after {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+            .box-bg-shape {
+                left: -3px;
+                top: -3px;
+                opacity: 1;
+                visibility: visible;
+            }
+            .subnet-pricing-2-box-icon-wrap {
+                .icon {
+                    &:nth-child(2) {
+                        background-color: var(--clr-body-heading);
+                    }
+                } 
+            }
+            .subnet-pricing-2-box-title-wrap {
+                span {
+                    color: var(--clr-common-white);
+                }
+            }
+            .subnet-pricing-2-box-price {
+                color: var(--clr-common-white);
+                span {
+                    color: var(--clr-common-white);
+                }
+            }
+            .subnet-pricing-2-box-feature {
+                ul {
+                    li {
+                        color: var(--clr-common-white);
+                        opacity: 1;
+                        i {
+                            color: var(--clr-common-white);
+                        }
+                        &.disable {
+                            opacity: .3;
+                        }
+                    }
+                }
+            }
+            .subnet-pricing-2-box-btn {
+                .subnet-btn-2 {
+                    background-color: var(--clr-common-white);
+                    border-color: var(--clr-common-white);
+                    &:hover {
+                        border-color: var(--clr-theme-secondary);
+                    }
+                }
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: var(--clr-theme-primary);
+            top: 0;
+            left: 0;
+            transform: translateY(0);
+            transform-origin: left;
+            opacity: 0;
+            visibility: hidden;
+            @include transition(.3s);
+        }
+        .box-bg-shape {
+            position: absolute;
+            left: -40px;
+            top: -40px;
+            z-index: 1;
+            opacity: 0;
+            visibility: hidden;
+            @include transition(.3s);
+        }
+        &-icon-wrap {
+            position: relative;
+            z-index: 1;
+            .icon {
+                display: inline-block;
+                width: 54px;
+                height: 54px;
+                border-radius: 50%;
+                line-height: 54px;
+                text-align: center;
+                background-color: var(--clr-common-white);
+                box-shadow: 0px 4px 14px rgba(8, 8, 33, 0.1);
+                @include transition(.3s);
+                margin: 0 9px;
+                &:nth-child(2) {
+                    background-color: var(--clr-theme-primary);
+                    box-shadow: none;
+                }
+            }
+            
+        }
+        &-title-wrap {
+            position: relative;
+            z-index: 1;
+            span {
+                display: inline-block;
+                font-weight: 600;
+                text-transform: capitalize;
+                font-size: 16px;
+                color: var(--clr-body-heading);
+                line-height: 13px;
+                margin-bottom: 11px;
+            }
+            .subnet-pricing-2-box-price {
+                font-size: 40px;
+                font-weight: 900;
+                color: var(--clr-theme-primary);
+                margin-bottom: 27px;
+                @include transition(.3s);
+                span {
+                    display: inline-block;
+                    font-weight: 900;
+                    font-size: 20px;
+                    color: var(--clr-theme-primary);
+                    text-transform: lowercase;
+                    @include transition(.3s);
+                }
+            }
+        }
+        &-feature {
+            text-align: left;
+            position: relative;
+            z-index: 1;
+            ul {
+                list-style: none;
+                li {
+                    font-size: 15px;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    line-height: 22px;
+                    position: relative;
+                    opacity: 0.7;
+                    color: var(--clr-body-heading);
+                    @include transition(.3s);
+                    &:not(:last-child) {
+                        margin-bottom: 15px;
+                    }
+                    & i {
+                        color: var(--clr-theme-primary);
+                        display: inline-block;
+                        margin-right: 10px;
+                    }
+                    &:is(.disable) {
+                        opacity: .3;
+                        & i {
+                            color: var(--clr-body-heading);
+                        }
+                    }
+                }
+            }
+        }
+        &-btn {
+            .subnet-btn-2 {
+                height: 50px;
+                line-height: 50px;
+                width: 100%;
+                &::before {
+                    background-color: var(--clr-theme-secondary);
+                }
+            }
+        }
+    }
+}
+.subnet-pricing-1-box.active .subnet-pricing-1-box-btn a {
+    border-color: transparent;
+    background-color: var(--clr-theme-primary);
+    color: var(--clr-common-white);
+}
+.subnet-pricing-wrapper-main-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media #{$xl} {
+        padding: 0 30px;
+    }
+    & .subnet-flex-item.item-1 {
+        flex: 0 0 27.749%;
+        @media #{$xxl} {
+            flex: 0 0 28.749%;
+        }
+        @media #{$lg, $md} {
+            flex: 0 0 50%;
+        }
+        @media #{$xs} {
+            flex: 0 0 100%;
+        }
+    }
+    & .subnet-flex-item.item-2 {
+        flex: 0 0 45.0266%;
+        @media #{$xxl} {
+            flex: 0 0 41.0266%;
+        }
+        @media #{$xl} {
+            flex: 0 0 37.0266%;
+        }
+        @media #{$lg, $md} {
+            order: 3;
+            flex: 0 0 100%;
+        }
+        @media #{$xs} {
+            flex: 0 0 100%;
+        }
+    }
+    & .subnet-flex-item.item-3 {
+        flex: 0 0 27.2244%;
+        @media #{$xxl} {
+            flex: 0 0 28.749%;
+        }
+        @media #{$lg, $md} {
+            flex: 0 0 50%;
+        }
+        @media #{$xs} {
+            flex: 0 0 100%;
+        }
+    }
+}
+.subnet-flex-item.pt-185.pb-150 {
+    @media #{$xl, $lg, $md, $xs} {
+        padding-top: 150px;
+        padding-bottom: 110px;
+    }
+}

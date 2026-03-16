@@ -1,0 +1,95 @@
+
+/*
+************
+*************************
+23. Contact Form
+******************************************************* 
+*************************************************************** */
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.subnet-contact-form-2 {
+    &-area {
+        .padding-box {
+            padding-right: 9px;
+            padding-left: 9px;
+        }
+        position: relative;
+        &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(90deg, #9400D3 0%, #4B0082 100%);
+            opacity: 0.86;
+        }
+    }
+    &-title-wrap {
+        .subnet-subtitle-2 {
+            color: var(--clr-common-white);
+        }
+        .subnet-title-2 {
+            color: var(--clr-common-white);
+            margin-bottom: 0;
+        }
+    }
+    &-btn-wrap {
+        .subnet-btn-1 {
+            border: none;
+            outline: none;
+            width: 217px;
+        }
+    }
+    &-wrap {
+        form {
+            margin-left: -9px;
+            margin-right: -9px;
+        }
+    }
+}
+
+.contact-form-2-label {
+    font-size: 16px;
+    display: block;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: var(--clr-common-white);
+    line-height: 19px;
+    margin-bottom: 9px;
+}
+
+.contact-form-2-input {
+    width: 100%;
+    height: 54px;
+    border-radius: 40px;
+    outline: none;
+    border: none;
+    padding: 0 26px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: rgba(8,8,33,.6);
+    &::placeholder {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1;
+        color: var(--clr-body-text);
+        opacity: .6;
+    }
+}
+
+.contact-form-2-policy {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: var(--clr-common-white);
+    display: inline-block;
+    a {
+        display: inline-block;
+        color: var(--clr-common-white);
+        font-weight: 500;
+        text-decoration: none;
+    }
+}

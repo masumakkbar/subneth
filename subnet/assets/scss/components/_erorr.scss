@@ -1,0 +1,55 @@
+
+/*
+************
+*************************
+26. erorr
+******************************************************* 
+*************************************************************** */
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+
+.subnet-erorr-page {
+    &-area {
+        position: relative;
+        .bg-shape {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 240px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    &-content {
+        .img {
+            margin-bottom: 60px;
+        }
+        h4 {
+            font-size: 40px;
+            font-weight: 900;
+            margin-bottom: 7px;
+        }
+        p {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--clr-body-text);
+            line-height: 26px;
+            opacity: .6;
+            margin-bottom: 32px;
+            
+            br {
+                @media #{$xs} {
+                 display: none;
+                }
+            }
+        }
+        .erorr-page-btn {
+            width: 230px;
+            outline: none;
+            border: none;
+        }
+    }
+}

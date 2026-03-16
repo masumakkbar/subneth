@@ -1,0 +1,240 @@
+
+/*
+************
+*************************
+07. Sidebar
+******************************************************* 
+*************************************************************** */
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// ----------- mobile-menu-1 ---------------
+
+.subnet-sidebar-1 {
+    &-area {
+        overflow-Y: scroll;
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 450px;
+        box-shadow: 0 13px 29px rgb(4 0 23 / 10%);
+        height: 100%;
+        position: fixed;
+        z-index: 333;
+        top: 0;
+        transition: 0.4s;
+        padding: 50px 50px;
+        right: -500px;
+        opacity: 0;
+        visibility: hidden;
+        @media #{$xs} {
+            padding: 50px 30px;
+        }
+        &:is(.active) {
+            right: 0;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    &-logo {
+        &-wrap {
+            position: relative;
+            top: -50px;
+            opacity: 0;
+            visibility: hidden;
+            @include transition(.5s);
+            &:is(.is_show) {
+                top: 0;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        a {
+            display: block;
+        }
+    }
+    &-close-btn {
+        button {
+            border: 0;
+            background-color: transparent;
+            font-size: 30px;
+            font-weight: 400;
+            color: var(--clr-common-white);
+            padding: 0px;
+            padding-right: 0;
+            transition: 0.3s;
+            &:hover {
+                color: var(--clr-theme-primary);
+            }
+        } 
+    }
+    &-search {
+        &-wrap {
+            position: relative;
+            top: -60px;
+            opacity: 0;
+            visibility: hidden;
+            @include transition(.9s);
+            &:is(.is_show) {
+                top: 0;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        width: 100%;
+        & form {
+            position: relative;
+            z-index: 1;
+            
+            & input {
+                width: 100%;
+                background-color: transparent;
+                border: 1px solid rgb(255 255 255 / 20%);
+                color: var(--clr-common-white);
+                font-size: 16px;
+                padding: 15px 15px;
+                padding-right: 50px;
+                border-radius: 5px;
+                &::-moz-placeholder {
+                    color: var(--clr-common-white);
+                    font-size: 16px;
+                    opacity: .7;
+                }
+                &::placeholder {
+                    color: var(--clr-common-white);
+                    font-size: 16px;
+                    opacity: .7;
+                }
+            }
+            & button {
+                position: absolute;
+                background: transparent;
+                border: none;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: var(--clr-common-white);
+                &:hover {
+                    color: var(--clr-theme-primary);
+                }
+            }
+        }
+    }
+}
+
+// custom scrollbar
+
+.subnet-sidebar-1-area {
+    /* width */
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: #080821 ;
+    }
+  
+    /* Track */
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey; 
+        border-radius: 5px;
+    }
+   
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: var(--clr-theme-primary); 
+        border-radius: 5px;
+    }
+    
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: var(--clr-theme-secondary); 
+    }
+
+}
+
+// plugin customazation
+
+.subnet-sidebar-1-mobile-menu-wrap {
+    position: relative;
+    top: -100px;
+    opacity: 0;
+    visibility: hidden;
+    @include transition(.8s);
+    &:is(.is_show) {
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+    .mobile_menu {
+        .mean-bar {
+            .mean-nav {
+                background: #080821;
+                margin-top: 0;
+                ul {
+                    li {
+                        padding: 0;
+                        
+                        a {
+                            padding: 15px 0;
+                            width: 100%;
+                            font-size: 16px;
+                            text-transform: capitalize;
+                            border-top: none;
+                            opacity: 1;
+                            &:hover {
+                                color:var(--clr-common-white);
+                            }
+                        }
+                        &:is(.has-dropdown-menu) {
+                            a {
+                                &::after {
+                                    display: none;
+                                }
+                            }
+                        }
+                        .mean-expand {
+                            border: none !important;
+                            background: transparent;
+                            border-style: none;
+                            width: 40px;
+                            height: 53px;
+                            line-height: 53px;
+                            padding: 0;
+                            margin: 0;
+                            &:hover {
+                                background-color: rgb(255 255 255 / 20%);
+                                color: var(--clr-theme-primary);
+                            }
+                            &:is(.mean-clicked) {
+                                background-color: rgb(255 255 255 / 20%);
+                                color: var(--clr-theme-primary);
+                            }
+                        }
+                        .sub-menu {
+                            border-top:none;
+                            background-color: transparent;
+                            position: unset;
+                            width: 100%;
+                            top: 100%;
+                            visibility: visible;
+                            opacity: 1;
+                            transform-origin: top;
+                            transform: scaleY(1);
+                            li {
+                                a {
+                                    border: none;
+                                    padding-left: 35px;
+                                    font-size: 16px;
+                                    color: var(--clr-common-white);
+                                }
+                            }
+                        }
+                        &:not(:last-child) {
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                            a {
+                                border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
